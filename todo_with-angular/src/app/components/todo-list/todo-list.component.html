@@ -1,0 +1,32 @@
+<div class="todo-list">
+  <div class="search-container">
+    <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search todos" class="form-control">
+  </div>
+
+  <table class="todo-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of pagedTodos">
+        <td>{{ todo.id }}</td>
+        <td>{{ todo.title }}</td>
+        <td>{{ todo.description }}</td>
+        <td>
+          <button (click)="deleteTodo(todo.id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1" class="btn btn-secondary">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages" class="btn btn-secondary">Next</button>
+  </div>
+</div>
