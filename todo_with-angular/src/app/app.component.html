@@ -1,0 +1,9 @@
+<mat-toolbar>
+  <span class="app-title">Todo List App</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<div class="container">
+  <app-todo-form (todoAdded)="todoList.loadTodos()"></app-todo-form>
+  <app-todo-list #todoList></app-todo-list>
+</div>
