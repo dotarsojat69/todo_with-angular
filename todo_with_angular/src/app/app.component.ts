@@ -5,7 +5,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { TodoFormComponent } from "./components/todo-form/todo-form.component";
 import { TodoListComponent } from "./components/todo-list/todo-list.component";
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
