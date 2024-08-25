@@ -25,10 +25,7 @@ export class TodoFormComponent {
 
   onSubmit(): void {
     if (this.todoForm.valid) {
-      const newTodo: Todo = {
-        id: 0, // ID will be assigned by the server
-        ...this.todoForm.value
-      };
+      const newTodo: Todo = this.todoForm.value;
 
       this.todoService.addTodo(newTodo).subscribe(
         (addedTodo) => {

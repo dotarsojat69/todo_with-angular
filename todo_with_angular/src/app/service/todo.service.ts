@@ -7,7 +7,7 @@ import { Todo } from '../model/todo.model';
   providedIn: 'root'
 })
 export class TodoService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+  private apiUrl = 'http://localhost:3000/api/todos';
 
   constructor(private http: HttpClient) { }
 
@@ -20,6 +20,6 @@ export class TodoService {
   }
 
   deleteTodo(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete(`${this.apiUrl}?id=${id}`);
   }
 }
